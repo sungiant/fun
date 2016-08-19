@@ -22,5 +22,3 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 [mit]: https://github.com/sungiant/fun/blob/master/LICENSE
-[fun_nuget]: https://www.nuget.org/packages/Fun/
-[sources]: https://github.com/sungiant/fun/tree/master/source/fun/src/main/cs
