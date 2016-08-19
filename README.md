@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/sungiant/fun.png?branch=master)](https://travis-ci.org/sungiant/fun)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/sungiant/fun/blob/master/LICENSE)
+[![Nuget Version](https://img.shields.io/nuget/v/Fun.svg)](https://www.nuget.org/packages/Fun)
 
 ## Overview
 
@@ -11,34 +12,39 @@ Fun is simple functional programming library written in C#, inspired by Scala.
 
 For fun, of course!
 
+## Getting started
+
+Fun is available as a stand-alone library via [nuget][fun_nuget].  Here's an example nuget `packages.config` file that pulls in Fun:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="Fun" version="1.0.0" targetFramework="net45" />
+</packages>
+```
+
+
 ## Example usage:
 
+Fluent function application:
+
 ```cs
-
-/**
- * Fluent function application:
- */
-
 "945bd525-d80e-4055-a762-7256b4b38403".Apply (Guid.Parse);
+```
 
+Immutable `Unit` data type, the empty tuple `()`:
 
-/**
- * Immutable `Unit` data type:
- */
-
-Int32 x = 42;
-
+```cs
 Func<String, Unit> print = (z) => {
 	Console.WriteLine (z);
 	return Unit.Value;
 };
+```
 
-x.ToString ().Apply (print);
+Fluent `if` - `else` statments:
 
-
-/**
- * Fluent `if` - `else` statments:
- */
+```cs
+Int32 x = 42;
 
 If.Else (	
 	x % 2 == 0, () => "x is even",
@@ -50,12 +56,11 @@ If.Else (
 	x % 2 == 0, () => "x is even",
 	/* else */  () => "x is odd")
 	.Apply (print);
+```
 
+Immutable `Option` data type:
 
-/**
- * Immutable `Option` data type:
- */
-
+```cs
 var oh = Option.Apply ("hello");
 var ow = Option.Apply ("world");
 
@@ -68,12 +73,11 @@ Option.Apply (Console.ReadLine ())
 	    (z) => z,
 	    () => "Read line returned null!")
 	.Apply (print);
+```
 
+Immutable `Either` data type:
 
-/**
- * Immutable `Either` data type:
- */
-
+```cs
 Either.Left <String, Int32>("foobar")
 	.MapLeft (z => z.ToUpper ())
 	.Left
@@ -86,12 +90,11 @@ Either.Right <String, Int32> (42)
 		(right) => right * 2)
 	.ToString ()
 	.Apply (print);
+```
 
+Immutable `Try` data type:
 
-/**
- * Immutable `Try` data type:
- */
-
+```cs
 Try.Apply (() => Environment.GetEnvironmentVariable ("HOME"))
 	.Match (
 		(success) => success,
@@ -116,3 +119,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 [mit]: https://github.com/sungiant/fun/blob/master/LICENSE
+[fun_nuget]: https://www.nuget.org/packages/Fun/
+[sources]: https://github.com/sungiant/abacus/tree/master/source/abacus/src/main/cs
