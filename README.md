@@ -20,6 +20,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[mit]: https://raw.githubusercontent.com/sungiant/fun/master/LICENSE
+[mit]: https://github.com/sungiant/fun/blob/master/LICENSE
 [fun_nuget]: https://www.nuget.org/packages/Fun/
 [sources]: https://github.com/sungiant/fun/tree/master/source/fun/src/main/cs
