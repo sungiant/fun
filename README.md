@@ -4,7 +4,7 @@
 
 ## Overview
 
-Fun is simple functional programming libary written in C#, inspired by Scala.
+Fun is simple functional programming library written in C#, inspired by Scala.
 
 ## Why?
 
