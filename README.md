@@ -1,6 +1,6 @@
 ## Fun
 
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/sungiant/fun/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/sungiant/fun/blob/master/LICENSE)
 
 ## Overview
 
