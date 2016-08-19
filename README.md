@@ -11,6 +11,95 @@ Fun is simple functional programming library written in C#, inspired by Scala.
 
 For fun, of course!
 
+## Example usage:
+
+```cs
+
+/**
+ * Fluent function application:
+ */
+
+"945bd525-d80e-4055-a762-7256b4b38403".Apply (Guid.Parse);
+
+/**
+ * Immutable `Unit` data type:
+ */
+
+Int32 x = 42;
+
+Func<String, Unit> print = (z) => {
+	Console.WriteLine (z);
+	return Unit.Value;
+};
+
+x.ToString ().Apply (print);
+
+/**
+ * Fluent `if` - `else` statments:
+ */
+
+If.Else (	
+	x % 2 == 0, () => "x is even",
+	/* else */  () => "x is odd")
+	.Apply (print);
+
+If.Else (
+	x % 3 == 0, () => "x is a multiple of three",
+	x % 2 == 0, () => "x is even",
+	/* else */  () => "x is odd")
+	.Apply (print);
+
+/**
+ * Immutable `Option` data type:
+ */
+
+var oh = Option.Apply ("hello");
+var ow = Option.Apply ("world");
+
+oh.FlatMap ((h) => ow.Map ((w) => h + " " + w))
+    .ValueOrElse ("foobar")
+	.Apply (print);
+
+Option.Apply (Console.ReadLine ())
+	.Match (
+	    (z) => z,
+	    () => "Read line returned null!")
+	.Apply (print);
+
+/**
+ * Immutable `Either` data type:
+ */
+
+Either.Left <String, Int32>("foobar")
+	.MapLeft (z => z.ToUpper ())
+	.Left
+	.ValueOrElse ("!")
+	.Apply (print);
+
+Either.Right <String, Int32> (42)
+	.Match (
+		(left) => left.Length,
+		(right) => right * 2)
+	.ToString ()
+	.Apply (print);
+
+/**
+ * Immutable `Try` data type:
+ */
+
+Try.Apply (() => Environment.GetEnvironmentVariable ("HOME"))
+	.Match (
+		(success) => success,
+		(failure) => "foobar")
+	.Apply (print);
+
+
+Try.Apply (() => Environment.GetEnvironmentVariable ("HOME"))
+	.Flatten ((failure) => "foobar")
+	.Apply (print);
+	
+```
+
 ## License
 
 Fun is licensed under the **[MIT License][mit]**; you may not use this software except in compliance with the License.
