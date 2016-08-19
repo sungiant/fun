@@ -21,6 +21,7 @@ For fun, of course!
 
 "945bd525-d80e-4055-a762-7256b4b38403".Apply (Guid.Parse);
 
+
 /**
  * Immutable `Unit` data type:
  */
@@ -33,6 +34,7 @@ Func<String, Unit> print = (z) => {
 };
 
 x.ToString ().Apply (print);
+
 
 /**
  * Fluent `if` - `else` statments:
@@ -48,6 +50,7 @@ If.Else (
 	x % 2 == 0, () => "x is even",
 	/* else */  () => "x is odd")
 	.Apply (print);
+
 
 /**
  * Immutable `Option` data type:
@@ -66,6 +69,7 @@ Option.Apply (Console.ReadLine ())
 	    () => "Read line returned null!")
 	.Apply (print);
 
+
 /**
  * Immutable `Either` data type:
  */
@@ -82,6 +86,7 @@ Either.Right <String, Int32> (42)
 		(right) => right * 2)
 	.ToString ()
 	.Apply (print);
+
 
 /**
  * Immutable `Try` data type:
