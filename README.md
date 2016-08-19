@@ -41,7 +41,7 @@ Func<String, Unit> print = (z) => {
 };
 ```
 
-Fluent `if` - `else` statments:
+Fluent `if` - `else` statements:
 
 ```cs
 Int32 x = 42;
