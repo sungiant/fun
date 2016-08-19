@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Fun</id>
+    <title>Fun</title>
+    <version>1.0.0</version>
+    <authors>Ash Pook</authors>
+    <owners>Ash Pook</owners>
+    <licenseUrl>https://raw.githubusercontent.com/sungiant/fun/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/sungiant/fun</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A super simple functional programming library.</description>
+    <copyright>Copyright 2016</copyright>
+    <tags>Functional</tags>
+  </metadata>
+  <files>
+    <file src="bin/fun.dll" target="lib" />
+  </files>
+</package>
