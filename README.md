@@ -8,10 +8,6 @@
 
 Fun is simple functional programming library written in C#, inspired by Scala.
 
-## Why?
-
-For fun, of course!
-
 ## Getting started
 
 Fun is available as a stand-alone library via [nuget][fun_nuget].  Here's an example nuget `packages.config` file that pulls in Fun:
