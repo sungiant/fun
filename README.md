@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/sungiant/fun.png?branch=master)](https://travis-ci.org/sungiant/fun)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/sungiant/fun/blob/master/LICENSE)
 [![Nuget Version](https://img.shields.io/nuget/v/Fun.svg)](https://www.nuget.org/packages/Fun)
-[![Nuget Version](https://img.shields.io/nuget/dt/Fun](https://www.nuget.org/packages/Fun)
+[![Nuget Version](https://img.shields.io/nuget/dt/Fun)](https://www.nuget.org/packages/Fun)
 
 ## Overview
 
