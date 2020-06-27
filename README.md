@@ -1,9 +1,9 @@
 # Fun 🐱
 
-[![Build Status](https://travis-ci.org/sungiant/fun.png?branch=master)](https://travis-ci.org/sungiant/fun)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/sungiant/fun/blob/master/LICENSE)
-[![Nuget Version](https://img.shields.io/nuget/v/Fun.svg)](https://www.nuget.org/packages/Fun)
-[![Nuget Downloads](https://img.shields.io/nuget/dt/Fun)](https://www.nuget.org/packages/Fun)
+[![Build Status](https://img.shields.io/travis/sungiant/fun)][status]
+[![License](https://img.shields.io/github/license/sungiant/fun)][mit]
+[![Nuget Version](https://img.shields.io/nuget/v/Fun)][nuget]
+[![Nuget Downloads](https://img.shields.io/nuget/dt/Fun)][nuget]
 
 ## Overview
 
@@ -11,7 +11,7 @@ Fun is simple functional programming library written in C#, inspired by Scala.
 
 ## Getting started
 
-Fun is available as a stand-alone library via [nuget][fun_nuget].  Here's an example nuget `packages.config` file that pulls in Fun:
+Fun is available as a stand-alone library via [nuget][nuget].  Here's an example nuget `packages.config` file that pulls in Fun:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -109,5 +109,6 @@ Try.Apply (() => Environment.GetEnvironmentVariable ("HOME"))
 
 Fun is licensed under the **[MIT License][mit]**; you may not use this software except in compliance with the License.
 
+[status]: https://travis-ci.org/sungiant/fun
 [mit]: https://github.com/sungiant/fun/blob/master/LICENSE
-[fun_nuget]: https://www.nuget.org/packages/Fun/
+[nuget]: https://www.nuget.org/packages/Fun/
