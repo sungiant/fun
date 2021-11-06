@@ -33,8 +33,8 @@ Immutable `Unit` data type, the empty tuple `()`:
 
 ```cs
 Func<String, Unit> print = (z) => {
-	Console.WriteLine (z);
-	return Unit.Value;
+    Console.WriteLine (z);
+    return Unit.Value;
 };
 ```
 
@@ -44,15 +44,15 @@ Fluent `if` - `else` statements:
 Int32 x = 42;
 
 If.Else (	
-	x % 2 == 0, () => "x is even",
-	/* else */  () => "x is odd")
-	.Apply (print);
+    x % 2 == 0, () => "x is even",
+    /* else */  () => "x is odd")
+  .Apply (print);
 
 If.Else (
-	x % 3 == 0, () => "x is a multiple of three",
-	x % 2 == 0, () => "x is even",
-	/* else */  () => "x is odd")
-	.Apply (print);
+    x % 3 == 0, () => "x is a multiple of three",
+    x % 2 == 0, () => "x is even",
+    /* else */  () => "x is odd")
+  .Apply (print);
 ```
 
 Immutable `Option` data type:
@@ -62,46 +62,46 @@ var oh = Option.Apply ("hello");
 var ow = Option.Apply ("world");
 
 oh.FlatMap ((h) => ow.Map ((w) => h + " " + w))
-    .ValueOrElse ("foobar")
-	.Apply (print);
+  .ValueOrElse ("foobar")
+  .Apply (print);
 
 Option.Apply (Console.ReadLine ())
-	.Match (
-	    (z) => z,
-	    () => "Read line returned null!")
-	.Apply (print);
+      .Match (
+         (z) => z,
+	 () => "Read line returned null!")
+      .Apply (print);
 ```
 
 Immutable `Either` data type:
 
 ```cs
 Either.Left <String, Int32>("foobar")
-	.MapLeft (z => z.ToUpper ())
-	.Left
-	.ValueOrElse ("!")
-	.Apply (print);
+      .MapLeft (z => z.ToUpper ())
+      .Left
+      .ValueOrElse ("!")
+      .Apply (print);
 
 Either.Right <String, Int32> (42)
-	.Match (
-		(left) => left.Length,
-		(right) => right * 2)
-	.ToString ()
-	.Apply (print);
+      .Match (
+         (left) => left.Length,
+         (right) => right * 2)
+      .ToString ()
+      .Apply (print);
 ```
 
 Immutable `Try` data type:
 
 ```cs
 Try.Apply (() => Environment.GetEnvironmentVariable ("HOME"))
-	.Match (
-		(success) => success,
-		(failure) => "foobar")
-	.Apply (print);
+   .Match (
+      (success) => success,
+      (failure) => "foobar")
+   .Apply (print);
 
 
 Try.Apply (() => Environment.GetEnvironmentVariable ("HOME"))
-	.Flatten ((failure) => "foobar")
-	.Apply (print);
+   .Flatten ((failure) => "foobar")
+   .Apply (print);
 	
 ```
 
